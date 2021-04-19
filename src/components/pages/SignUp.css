@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+
+body {
+  font-weight: 300;
+  background:white;
+  color: black;
+  padding: 0px;
+  margin: 0 0 0 0;
+  box-sizing: border-box;
+}
+body, body * {
+  font-family: 'Roboto', sans-serif;
+  }
+
+.text-alert{
+  font-size: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.form-center{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: -0.8rem !important;
+}
+
+
+.text-alert{
+  font-family:  'Trebuchet MS', sans-serif;
+  color: #ff577f !important;
+}
+.form-content{
+  margin: auto;
+  width: 50%;
+}
+
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+.responsive-wrapper {
+  width: 100%;
+  height:90vh;
+  top: 10vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #252525;
+  text-align: center;
+  justify-content: space-evenly;
+  
+}
+.responsive-nav-text{
+  color: white !important;
+}
+.responsive-nav-text:hover{
+  opacity: 0.7;
+}
+
+.stundent-services-text{
+  color: lightgoldenrodyellow !important;
+}
+
+.stundent-services-text:hover{
+  opacity: 0.7;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  
+}
+.pages{
+  margin-top: -1rem;
+}
+
+#left {
+  background : #1a1a1a;
+  display: flex ;
+  flex-direction: column;
+ align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: white;
+}
+@media(min-width:760px){
+ 
+}
+
+
+#right {
+  flex: 2;
+}
+@media(max-width:760px){
+  
+  .md\:#right{
+     display: none;
+  }
+  #signin {
+    position: relative;
+   top: 4rem;
+   resize: both;
+  overflow: auto;
+  margin-bottom: 4rem;
+  }
+}
+/* Sign In */
+#signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+#signin form {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.register-btn{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.7rem;
+}
+
+#signin .logo img {
+  width: 300px;
+}
+
+#signin label {
+  font-size: 0.9rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.signIn-label{
+  margin-bottom: -0.5rem;
+}
+
+#signin .text-input {
+  margin-bottom: 1rem;
+  width: 100%;
+  background: white;
+  border: 1px solid #555;
+  color: black;
+  padding: 0.5rem 1rem;
+  line-height: 1.5rem;
+}
+
+
+#signin .primary-btn {
+  width: 100%;
+  margin-top: 15px;
+}
+
+#signin .secondary-btn,
+.or,
+.links {
+  width: 65%;
+  margin-top: 0rem !important;
+}
+
+
+#signin .links a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#signin .or {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+#signin .or .bar {
+  /* flex: auto; */
+  margin-right: 1rem;
+  
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: #aaa;
+  margin-top: -5px;
+}
+#signin .or .bar2{
+  margin-right: 0 !important;
+  margin-left: 1rem;
+}
+
+#signin .or span {
+  color: #ccc;
+  padding: 0 0.8rem;
+}
+
+/* Showcase */
+#showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://image.ibb.co/cO9Lxq/login-bg.jpg') no-repeat center center / cover;
+  height: 100vh;
+  text-align: center;
+  width: 60vw;
+}
+
+
+
+#showcase .showcase-text {
+  font-size: 3rem;
+  width: 100%;
+  color: #fff;
+  
+}
+
+#showcase .secondary-btn {
+  width: 60%;
+  margin: auto;
+  
+}
+
+/* Footer */
+#main-footer {
+  color: #ccc;
+  text-align: center;
+  font-size: 0.8rem;
+  max-width: 80%;
+  padding-top: 5rem;
+}
+
+#main-footer a {
+  color: #f96816;
+  text-decoration: underline;
+}
+
+/* Button */
+.primary-btn {
+  padding: 0.5rem 1rem;
+  height: 2.7rem;
+  display: block;
+  border: 0;
+  /* border-radius: 2px; */
+  font-weight: 500;
+  background: #0080ff;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 0.5rem !important;
+  transition: all 0.5s;
+}
+span:hover{
+  text-decoration: none;
+}
+label{
+  margin-bottom: -2px;
+}
+.primary-btn:hover {
+  background-color:#3380cc;
+  
+}
+
+.secondary-btn {
+  padding: 0.6rem 1rem;
+  height: 2.7rem;
+  display: block;
+  border: 1px solid #f4f4f4;
+  font-weight: 500;
+  background: none;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s;
+  margin-top: -10px;
+}
+
+.secondary-btn:hover {
+  border-color: #3380cc;;
+  color: #3380cc;;
+  
+}
+
+span:hover{
+  text-decoration: underline;
+
+}
+.remember_me_text{
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.remember_me_text p {
+position: absolute;
+left: 15px;
+bottom: -15px;
+}
+
+/* Media Queries */
+
+
+@media (max-width: 1200px) {
+  #showcase {
+    transition: 0.2s ease-in-out;
+    width: 50vw;
+    
+  }
+  #signin  {
+    margin-top: 4rem;
+  }
+
+}
+
+@media (max-width: 960px) {
+  #showcase{
+    margin-top: 4rem !important;
+  }
+  body {
+    overflow: auto;
+  }
+
+  #showcase{
+    display: none;
+  }
+
+  
+  #signin .logo {
+    margin-top: 2em;
+  }
+  #signin  {
+    height: 100vh;
+    
+  }
+
+  /* #signin .logo {
+    margin-bottom: 2vh;
+  }
+
+  #signin .text-input {
+    margin-bottom: 0.7rem;
+  }
+
+  #main-footer {
+    padding-top: 1rem;
+  } */
+}
+
+

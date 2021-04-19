@@ -1,0 +1,32 @@
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+.username{
+    margin-left: .5rem;
+    margin-left: .5rem;
+    border-color: #00defc;
+    border-width: 1px;
+    border-radius: 15px;
+    outline: none;
+    width: 300px;
+    padding-left: .5rem;
+    margin-top: -.5rem;
+}
+.email{
+    margin-left: .5rem;
+    border-color: #00defc;
+    border-width: 1px;
+    border-radius: 15px;
+    width: 300px;
+    outline: none;
+    padding-left: .5rem;
+    margin-top: -.5rem;
+}
+.edit-profile-text{
+    padding-left: .5rem;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
