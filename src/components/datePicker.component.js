@@ -16,9 +16,9 @@ function MaterialDatePicker() {
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-    <UserContext.Provider value={selectedDate}>
+    {/* <UserContext.Provider value={selectedDate}>
         <Assignment></Assignment>
-      </UserContext.Provider>
+      </UserContext.Provider> */}
       <KeyboardDatePicker
         disableToolbar
         variant="inline"

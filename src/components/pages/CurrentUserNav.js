@@ -44,7 +44,7 @@ const CurrentUserNav = (props) => {
 
 
   return (
-    <ul key = 'a' className=" responsive-wrapper">
+    <ul className=" responsive-wrapper">
       <li key = 'Syllabus'> 
         <Link
           onClick={props.handleClick}
@@ -65,7 +65,7 @@ const CurrentUserNav = (props) => {
         </Link>
       </li>
       {currentUser.roles == "ROLE_USER" && (
-        <li key = 'Your Classes' >
+        <li key>
           <Link
             onClick={props.handleClick}
             to={{ pathname: "/courses", permission: "allowed" }}
@@ -76,7 +76,7 @@ const CurrentUserNav = (props) => {
         </li>
       )}
       {currentUser.roles == "ROLE_USER" && (
-        <li key = 'Register for Classes'>
+        <li>
           <Link
             onClick={props.handleClick}
             to={{ pathname: "/registerForClasses", permission: "allowed" }}
@@ -88,7 +88,7 @@ const CurrentUserNav = (props) => {
         </li>
       )}
       {currentUser.roles == "ROLE_USER" && (
-        <li key = 'Drop Classes'>
+        <li>
           <Link
             onClick={props.handleClick}
             to={{ pathname: "/dropClasses", permission: "allowed" }}
@@ -100,7 +100,7 @@ const CurrentUserNav = (props) => {
         </li>
       )}
       {currentUser.roles == "ROLE_TEACHER" && (
-        <li key = 'Manage Courses'>
+        <li>
           <Link
             onClick={props.handleClick}
             to={{ pathname: "/manageCourses", permission: "allowed" }}
@@ -112,7 +112,7 @@ const CurrentUserNav = (props) => {
         </li>
       )}
       {currentUser.roles == "ROLE_TEACHER" && (
-        <li key = 'Inbox'>
+        <li>
           <Link
             onClick={props.handleClick}
             to={{ pathname: "/inbox", permission: "allowed" }}
@@ -123,7 +123,7 @@ const CurrentUserNav = (props) => {
         </li>
       )}
 
-      <li key = 'Logout'>
+      <li>
         <Link
           onClick={props.handleClickResNavLogOut}
           to={{ pathname: "/login", permission: "allowed" }}
