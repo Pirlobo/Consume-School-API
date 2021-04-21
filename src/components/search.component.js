@@ -50,7 +50,6 @@ const Search = (props) => {
       setIsSpringBtnClicked(true);
     }
   };
-
   const items = [];
   if (totalPages > 1) {
     for (let pageNo = 1; pageNo <= totalPages; pageNo++) {
@@ -131,36 +130,39 @@ const Search = (props) => {
       setIsSelected(false);
     }
   };
-
+  const searchCoursesByTeacherOrTitle = () => {
+    CourseService.searchCoursesByTeacherOrTitle(keyword).then((response) => {
+      setCourses(response.data.dtoCourses);
+      setOrderBy(response.data.orderBy);
+      setTotalPages(response.data.totalPages);
+      setTotalElements(response.data.totalElements);
+      setSuccessfulRegisteredClasses([]);
+      setSelectedCourses([]);
+    });
+  }
   useEffect(() => {
     if (keyword != null && sortField === null && sortDir === null) {
-      setIsSpringBtnClicked(false);
-      setIsFallBtnClicked(false);
-      CourseService.searchCoursesByTitle(keyword).then((response) => {
-        setCourses(response.data.dtoCourses);
-        setOrderBy(response.data.orderBy);
-        setTotalPages(response.data.totalPages);
-        setTotalElements(response.data.totalElements);
-        setSuccessfulRegisteredClasses([]);
-        setSelectedCourses([]);
-      });
+      searchCoursesByTeacherOrTitle()
     }
   }, []);
+  const searchCoursesByTitleAndPage = () => {
+    CourseService.searchCoursesByTitleAndPage(
+      pageNo.pageNum,
+      keyword,
+      sortField,
+      sortDir
+    ).then((response) => {
+      setCourses(response.data.dtoCourses);
+      setOrderBy(response.data.orderBy);
+      setTotalPages(response.data.totalPages);
+      setTotalElements(response.data.totalElements);
+      setSuccessfulRegisteredClasses([]);
+      setSelectedCourses([]);
+    });
+  }
   useEffect(() => {
     if (keyword != null && sortField !== null && sortDir !== null) {
-      CourseService.searchCoursesByTitleByPage(
-        pageNo.pageNum,
-        keyword,
-        sortField,
-        sortDir
-      ).then((response) => {
-        setCourses(response.data.dtoCourses);
-        setOrderBy(response.data.orderBy);
-        setTotalPages(response.data.totalPages);
-        setTotalElements(response.data.totalElements);
-        setSuccessfulRegisteredClasses([]);
-        setSelectedCourses([]);
-      });
+      searchCoursesByTitleAndPage()
     }
   }, []);
 

@@ -9,7 +9,7 @@ class CourseService {
             headers: authHeader()
         } );
     }
-    searchCoursesByTitleByPage(pageNo, search, sortField, sortDir){
+    searchCoursesByTitleAndPage(pageNo, search, sortField, sortDir){
         return axios.get(API_URL + "page/" + pageNo + "?search=" + search + "&sortField=" + sortField + "&sortDir=" + sortDir, {
             headers: authHeader()
         } );

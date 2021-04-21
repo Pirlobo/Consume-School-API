@@ -21,6 +21,8 @@ label {
 background-color : #00defc;
 }
 .card-container.card {
+  position: relative;
+  top: 5rem;
   max-width: 350px !important;
   padding: 40px 40px;
 }
@@ -351,9 +353,6 @@ table td {
 }
 table th {
   text-align: center;
-}
-.bottom-gap-btn{
-  margin-top: 2rem;
 }
 #btn{
   position: absolute;

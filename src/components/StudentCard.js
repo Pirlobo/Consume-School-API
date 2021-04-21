@@ -112,7 +112,7 @@ export default class StudentCard extends Component {
                   <Link
                     to={"/requiredMaterials"}
                     className="stundent-services-text nav-link"
-                  >
+                  > 
                     Required Books
                   </Link>
                   <i class="big-icon fas fa-book"></i>

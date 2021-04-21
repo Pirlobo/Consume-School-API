@@ -1,5 +1,6 @@
 .course-card {
     width: 250px !important;
+    height: 200px !important;
     display: flex;
     flex-direction: column;
     border: 1px #03b1fc;

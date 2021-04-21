@@ -7,6 +7,7 @@ function Book(props) {
   useEffect(() => {
     BookService.getAllRequiredBooks().then((response) => {
       if (response.status !== 404) {
+        console.log(response.data)
         setBooks(Object.values(response.data));
         setKeys(Object.keys(response.data));
       }
