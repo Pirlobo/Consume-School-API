@@ -10,8 +10,6 @@ label {
   top: 5rem;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: auto;
 }
 
 #assignment-header{
@@ -63,13 +61,24 @@ background-color : #00defc;
 .nav-menu i {
 color: white !important;
 }
-
+.grade-action{
+  outline: none;
+  border: none;
+  width: 65px;
+  color: white;
+  background-color: #ffae00;
+  border-radius: 8px;
+  opacity: 0.8;
+}
+.grade-action:hover{
+  opacity: 1;
+}
 
 .card {
   background-color: transparent;
   padding: 20px 25px 30px;
   margin: 0 auto;
-  top: 1rem;
+  top: 4rem;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -117,7 +126,8 @@ transition: all 0.2s ease-out;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 18vw;
   position: relative;
 }
@@ -127,7 +137,7 @@ ul{
 }
  
 .big-icon {
-  color: lightgoldenrodyellow !important;
+  color: white !important;
   font-size: 4rem;
   position: relative;
   top: 1rem;
@@ -142,7 +152,7 @@ ul{
 }
 
 .profile-name{
-  color: lightgoldenrodyellow !important;
+  color: white;
   position: relative;
   top: 1.5rem;
 }
@@ -354,6 +364,13 @@ table td {
 table th {
   text-align: center;
 }
+.grade-btn{
+  position: relative !important;
+  margin: auto;
+  margin-top: 3rem;
+  width: 80px !important
+}
+
 #btn{
   position: absolute;
   width: 8%;
@@ -367,11 +384,11 @@ table th {
   outline: none;
   margin-left: 50%;
   opacity : 0.8;
+  width: 100px
 }
 .save-btn{
   position: relative !important;
   margin: auto;
-  margin-top: .5rem;
 }
 tbody input {
   text-align: center;
@@ -387,10 +404,19 @@ thead#assignment > tr {
 #assignment-table{
   margin-top: -1rem;
 }
+.grade-table{
+  width: 80% !important;
+}
 .upload-btn{
   position: relative;
   display: flex;
   flex-direction: row;
+}
+.display-transcript{
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-size: 1.2rem;
 }
 #assignment-btn{
   position: relative;
@@ -424,7 +450,6 @@ thead#assignment > tr {
 
 #btn:hover {
   opacity: 1;
-  border-style: dashed;
   border-width: 2px;
   border-color: lightseagreen;
 }

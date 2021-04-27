@@ -20,8 +20,9 @@ const YourClasses = (props) => {
           <table>
             <thead id="course_header">
               <tr>
-                <th>Title</th>
                 <th>Reg_Id</th>
+                <th>Title</th>
+                <th>Units</th>
                 <th>From</th>
                 <th>To</th>
                 <th>Section</th>
@@ -39,8 +40,9 @@ const YourClasses = (props) => {
             <tbody>
               {courses.map((course) => (
                 <tr key={course.regId}>
-                  <td>{course.title}</td>
                   <td>{course.regId}</td>
+                  <td>{course.title}</td>
+                  <td>{course.units}</td>
                   <td>{course.startDay}</td>
                   <td>{course.endDay}</td>
                   <td>{course.section}</td>

@@ -18,20 +18,15 @@
   #course_options{
     outline: none;
     border: none;
-    background-color:  #222831  !important;
-    background-color: none;
+    background-color:#222831;
     color: white;
     position: relative;
     margin-left: -5px;
   }
-  option {
-    background-color: #222831 !important; 
-  } 
   #course{
     position: absolute;
     left: 5px;
   }
-  
   .btn--outline {
     background-color: transparent;
     color: #fff;

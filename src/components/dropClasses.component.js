@@ -51,7 +51,7 @@ const DropClasses = (props) => {
   };
 
   useEffect(() => {
-    CourseService.getCurrentRegisteredClasses().then((response) => {
+    CourseService.getIntendedDroppedCourses().then((response) => {
       setCourses(response.data);
     });
   }, []); // run only once
@@ -61,10 +61,10 @@ const DropClasses = (props) => {
       <StudentCard isActive="true" props={props}></StudentCard>
 
       <div className="container student-profile ">
-        <div className="table ">
+        <div className="table assignment-table">
           {successfulDroppedClasses.length > 0 ? (
             <h1 id="course_list">
-              You have successfully dropped the following courses
+              You have successfully dropped the following classes
             </h1>
           ) : (
             <h1 id="course_list">Course List</h1>
@@ -78,8 +78,9 @@ const DropClasses = (props) => {
             <thead id="course_header">
               <tr>
                 {successfulDroppedClasses.length > 0 ? null : <th>Drop</th>}
-                <th>Title</th>
                 <th>Reg_Id</th>
+                <th>Title</th>
+                <th>Units</th>
                 <th>From</th>
                 <th>To</th>
                 <th>Section</th>
@@ -96,8 +97,9 @@ const DropClasses = (props) => {
               <tbody>
                 {successfulDroppedClasses.map((course) => (
                   <tr key={course.regId}>
-                    <td>{course.title}</td>
                     <td>{course.regId}</td>
+                    <td>{course.title}</td>
+                    <td>{course.units}</td>
                     <td>{course.startDay}</td>
                     <td>{course.endDay}</td>
                     <td>{course.section}</td>
@@ -120,8 +122,9 @@ const DropClasses = (props) => {
                         onClick={onClick}
                       ></input>
                     </td>
-                    <td>{course.title}</td>
                     <td>{course.regId}</td>
+                    <td>{course.title}</td>
+                    <td>{course.units}</td>
                     <td>{course.startDay}</td>
                     <td>{course.endDay}</td>
                     <td>{course.section}</td>
@@ -139,16 +142,16 @@ const DropClasses = (props) => {
           {courses.length > 0 &&
           (successfulDroppedClasses.length === 0 ||
             successfulDroppedClasses.message) ? (
-            <div className="bottom-gap-btn">
-              <button id="btn" onClick={onDrop}>
+            <div>
+              <button id="btn" className="grade-btn" onClick={onDrop}>
                 Drop
               </button>
             </div>
           ) : (
             [
               successfulDroppedClasses.length > 0 ? (
-                <div className="bottom-gap-btn">
-                  <button id="btn" onClick={onReverse}>
+                <div>
+                  <button id="btn" className="grade-btn" onClick={onReverse}>
                     Back
                   </button>
                 </div>

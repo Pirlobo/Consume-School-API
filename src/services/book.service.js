@@ -9,7 +9,7 @@ class BookService {
     async getAllRequiredBooks(){
         try {
             const response = await axios
-            .get(API_URL + "getAllRequiredBooks/", {
+            .get(API_URL + "getAllRequiredBooks", {
                 headers: authHeader()
             });
             return response;
@@ -19,16 +19,6 @@ class BookService {
             }
         }
     }
-    moreDetails(id){
-        return axios
-        .get(API_URL + "moreDetails/" + id, {
-            headers: authHeader()
-        } )
-    }
-
-   
-  
- 
 }
 
 export default new BookService();

@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from "react";
 import StudentCard from "./StudentCard";
 import TeacherService from "../services/teacherService";
+import CourseService from "../services/course.service"
 function CourseStudentInfo(props) {
   const [regId, setRegId] = useState({
     regId: props.match.params.id,
   });
-
+ console.log(props.location.state);
   const [courses, setCourses] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [isSelected, setIsSelected] = useState(false);
   const [successfulDroppedClasses, setSuccessfulDroppedClasses] = useState([]);
   const [object, setObject] = useState({});
   const [isAnyClassSelected, setAnyClassSelected] = useState(false);
+  const [courseDescription, setCourseDescription] = useState("");
   useEffect(() => {
     TeacherService.studentInfo(regId.regId).then((response) => {
       setCourses(response.data);
     });
+    CourseService.getCourseDescriptionByRegId(regId.regId).then((response) => {
+        setCourseDescription(response.data.message);
+      })
   }, []);
 
   function removeElement(array, elem) {
@@ -70,8 +75,8 @@ function CourseStudentInfo(props) {
       <div className="profile">
         <StudentCard props = {props}></StudentCard>
         <div className="container student-profile ">
-          <h1 id="course_list">Student Information</h1>
-          <div className="table ">
+          <h1 id="course_list">{courseDescription}</h1>
+          <div className="table assignment-table">
             {isAnyClassSelected && (
               <h4 style={{ color: "red" }}>Please, select at least a student </h4>
             )}
@@ -81,9 +86,8 @@ function CourseStudentInfo(props) {
                   <th>Drop</th>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Description</th>
                   <th>Register Status</th>
-                  <th>Available/ Capacity</th>
+                  <th>Available/ Capacity/ Wailist</th>
                   <th>Register Rank</th>
                 </tr>
               </thead>
@@ -99,10 +103,9 @@ function CourseStudentInfo(props) {
                     </td>
                     <td>{course.userName}</td>
                     <td>{course.email}</td>
-                    <td>{course.description}</td>
                     <td>{course.registerStatus}</td>
                     <td>
-                      {course.available + "/ "} {course.capacity}
+                      {course.available + "/ "} {course.capacity  + "/ "} {course.waitList}
                     </td>
                     <td>{course.wailistedRank}</td>
                   </tr>
@@ -111,7 +114,7 @@ function CourseStudentInfo(props) {
             </table>
             {courses.length > 0 && (
               <div className="">
-                <button id="btn" onClick={onDrop}>
+                <button id="btn" className="grade-btn" onClick={onDrop}>
                   Drop
                 </button>
               </div>

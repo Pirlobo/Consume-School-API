@@ -44,6 +44,24 @@ export default class StudentCard extends Component {
         state: { permission: "allowed" },
       });
     }
+    else if (e.target.value === "gradeStudents") {
+      this.props.props.history.push({
+        pathname: "/manageCourses/grade",
+        state: { permission: "allowed" },
+      });
+    }
+    else if (e.target.value === "transcript") {
+      this.props.props.history.push({
+        pathname: "/viewTranscript",
+        state: { permission: "allowed" },
+      });
+    }
+    else if (e.target.value === "book") {
+      this.props.props.history.push({
+        pathname: "/manageCourses/addBook",
+        state: { permission: "allowed" },
+      });
+    }
   };
 
   componentDidMount() {
@@ -134,6 +152,8 @@ export default class StudentCard extends Component {
                   </option>
                   <option value="dropStudents">Drop Students</option>
                   <option value="grades">Assignments</option>
+                  <option value="gradeStudents">Grades</option>
+                  <option value="book">Add Books</option>
                 </select>
                 <i class="big-icon fas fa-book-reader"></i>
               </div>
@@ -160,10 +180,11 @@ export default class StudentCard extends Component {
                   <option selected="true" disabled="disabled">
                     Courses
                   </option>
-                  <option value="courses">Your classes</option>
+                  <option value="courses">Registered Classes</option>
                   <option value="register">Register for classes</option>
                   <option value="drop">Drop classes</option>
                   <option value="assignments">Assignments</option>
+                  <option value="transcript">Transcript</option>
                 </select>
                 <i class="big-icon fas fa-book-reader"></i>
               </div>

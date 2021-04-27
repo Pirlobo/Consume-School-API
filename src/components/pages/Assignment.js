@@ -61,7 +61,6 @@ function Assignment(props) {
   };
   const getAssignments = () => {
     UploadService.getAssignments(assignment.regId).then((response) => {
-      console.log(response.data);
       setFileInfos(response.data);
     });
   };
@@ -194,7 +193,7 @@ function Assignment(props) {
           </table>
         </div>
         {!isClicked ? null : (
-          <button onClick={upload} id="btn" className="save-btn">
+          <button onClick={upload} id="btn" className = "save-btn" style = {{marginTop : 30}}>
             Save
           </button>
         )}

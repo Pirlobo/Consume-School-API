@@ -21,7 +21,9 @@ function Course(props) {
       props.history.push(`/studentInfo/${regId}`);
     }
     else if (path === '/manageCourses/drop'){
-      props.history.push(`/manageCourses/drop/${regId}`);
+      props.history.push({
+        pathname:  `/manageCourses/drop/${regId}`,
+      });
     }
     else if (path === '/manageCourses/assignment'){
       props.history.push(`/manageCourses/assignment/${regId}`);
@@ -29,8 +31,15 @@ function Course(props) {
     else if (path === "/assignments") {
       props.history.push(`/assignments/${regId}`);
     }
+    else if (path === "/manageCourses/grade") {
+      props.history.push(`/manageCourses/grade/${regId}`);
+    }
+    else if (path === "/manageCourses/addBook") {
+      props.history.push(`/manageCourses/addBook/${regId}`);
+    }
   };
   useEffect(() => {
+
     setCurrentUser(authenticatedUser);
   }, []);
   useEffect(() => {

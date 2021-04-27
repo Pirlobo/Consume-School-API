@@ -26,6 +26,7 @@ import CourseStudentInfo from "./components/Course_Student_Info.component";
 import EditProfile from "./components/EditProfile.component";
 import UploadFiles from "./components/file.component";
 import Assignment from "./components/pages/Assignment";
+import Grade from "./components/pages/Grade";
 // const refreshToken = () => {
 //   AuthService.refreshToken();
 //   console.log("REFRESHED");
@@ -285,6 +286,36 @@ class App extends Component {
               isAuth={this.state.isAuth}
             ></ProtectedRoute>
 
+            <ProtectedRoute
+              exact path="/manageCourses/grade"
+              component={Course}
+              isAuth={this.state.isAuth}
+            ></ProtectedRoute>
+
+            <ProtectedRoute
+              path="/manageCourses/grade/:id"
+              component={Grade}
+              isAuth={this.state.isAuth}
+            ></ProtectedRoute>
+
+            <ProtectedRoute
+              exact path="/viewTranscript"
+              component={Grade}
+              isAuth={this.state.isAuth}
+            ></ProtectedRoute>
+
+            <ProtectedRoute
+              exact path="/manageCourses/addBook"
+              component={Course}
+              isAuth={this.state.isAuth}
+            ></ProtectedRoute>
+
+            <ProtectedRoute
+              exact path="/manageCourses/addBook/:id"
+              component={Book}
+              isAuth={this.state.isAuth}
+            ></ProtectedRoute>
+            
             <ProtectedRoute
               exact path="/assignments"
               component={Course}

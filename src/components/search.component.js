@@ -26,7 +26,6 @@ const Search = (props) => {
   const [pageNo, setPageNo] = useState({
     pageNum: props.match.params.id,
   });
-  console.log(pageNo);
   var styles = {
     color: "red",
   };
@@ -132,17 +131,16 @@ const Search = (props) => {
   };
   const searchCoursesByTeacherOrTitle = () => {
     CourseService.searchCoursesByTeacherOrTitle(keyword).then((response) => {
+      console.log(response.data);
       setCourses(response.data.dtoCourses);
       setOrderBy(response.data.orderBy);
       setTotalPages(response.data.totalPages);
       setTotalElements(response.data.totalElements);
-      setSuccessfulRegisteredClasses([]);
-      setSelectedCourses([]);
     });
-  }
+  };
   useEffect(() => {
     if (keyword != null && sortField === null && sortDir === null) {
-      searchCoursesByTeacherOrTitle()
+      searchCoursesByTeacherOrTitle();
     }
   }, []);
   const searchCoursesByTitleAndPage = () => {
@@ -156,13 +154,11 @@ const Search = (props) => {
       setOrderBy(response.data.orderBy);
       setTotalPages(response.data.totalPages);
       setTotalElements(response.data.totalElements);
-      setSuccessfulRegisteredClasses([]);
-      setSelectedCourses([]);
     });
-  }
+  };
   useEffect(() => {
     if (keyword != null && sortField !== null && sortDir !== null) {
-      searchCoursesByTitleAndPage()
+      searchCoursesByTitleAndPage();
     }
   }, []);
 
@@ -214,8 +210,9 @@ const Search = (props) => {
                 {successfulRegisteredClasses.length > 0 ? null : (
                   <th>Register</th>
                 )}
-                <th>Title</th>
                 <th>Reg_Id</th>
+                <th>Title</th>
+                <th>Units</th>
                 <th>From</th>
                 <th>To</th>
                 <th>Section</th>
@@ -234,8 +231,9 @@ const Search = (props) => {
               <tbody>
                 {successfulRegisteredClasses.map((course) => (
                   <tr key={course.regId}>
-                    <td>{course.title}</td>
                     <td>{course.regId}</td>
+                    <td>{course.title}</td>
+                    <td>{course.units}</td>
                     <td>{course.startDay}</td>
                     <td>{course.endDay}</td>
                     <td>{course.section}</td>
@@ -261,8 +259,9 @@ const Search = (props) => {
                             onClick={onClick}
                           ></input>
                         </td>
-                        <td>{course.title}</td>
                         <td>{course.regId}</td>
+                        <td>{course.title}</td>
+                        <td>{course.units}</td>
                         <td>{course.startDay}</td>
                         <td>{course.endDay}</td>
                         <td>{course.section}</td>
@@ -292,8 +291,9 @@ const Search = (props) => {
                                 onClick={onClick}
                               ></input>
                             </td>
-                            <td>{course.title}</td>
                             <td>{course.regId}</td>
+                            <td>{course.title}</td>
+                            <td>{course.units}</td>
                             <td>{course.startDay}</td>
                             <td>{course.endDay}</td>
                             <td>{course.section}</td>
@@ -321,8 +321,9 @@ const Search = (props) => {
                                 onClick={onClick}
                               ></input>
                             </td>
-                            <td>{course.title}</td>
                             <td>{course.regId}</td>
+                            <td>{course.title}</td>
+                            <td>{course.units}</td>
                             <td>{course.startDay}</td>
                             <td>{course.endDay}</td>
                             <td>{course.section}</td>
