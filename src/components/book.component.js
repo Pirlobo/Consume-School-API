@@ -11,16 +11,27 @@ function Book(props) {
   });
   const [error, setError] = useState("");
   const [currentUser, setCurrentUser] = useState(currentLoggedUser);
-  const [keys, setKeys] = useState([]);
   const [books, setBooks] = useState([]);
   const [message, setMessage] = useState("");
+  const [imageBase64Value, setImageBase64Value] = useState(null);
   const [createdBook, setCreatedBook] = useState({
     isbn: "",
     title: "",
     publisher: "",
     authors: "",
-    imageUrl: "",
   });
+  
+  const selectFile = (event) => {
+    if (beforeImageUpload(event.target.files[0])) {
+      getBase64Value(event.target.files[0], imageBase64Value => {
+        setImageBase64Value(imageBase64Value);
+    }); 
+    }
+    else{
+      setError("Error: File is not an image");
+    }
+  };
+
   const onCreate = (e) => {
     setError("");
     setIsClicked(!isClicked);
@@ -40,12 +51,36 @@ function Book(props) {
   const handleImageUrlChange = (e) => {
     setCreatedBook({ ...createdBook, imageUrl: e.target.value });
   };
-  const imageExists = (url, callback) => {
-    var img = new Image();
-    img.onload = function() { callback(true); };
-    img.onerror = function() { callback(false); };
-    img.src = url;
-  }
+
+const getBase64Value = (img, callback) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(img);
+    reader.onload = () => {
+        callback(reader.result);
+    };
+};
+
+const beforeImageUpload = (file) => {
+    const fileIsValidImage = file.type === "image/jpeg" || file.type === "image/png";
+    const fileIsValidSize = file.size / 1024 / 1024 < 1;
+
+    if (!fileIsValidImage) {
+        return false;
+    }
+
+    if (!fileIsValidSize) {
+        return false;
+    }
+
+    return fileIsValidImage && fileIsValidSize;
+};
+
+  // const imageExists = (url, callback) => {
+  //   var img = new Image();
+  //   img.onload = function() { callback(true); };
+  //   img.onerror = function() { callback(false); };
+  //   img.src = url;
+  // }
   const persist = (e) => {
     if (
       createdBook.isbn.length > 0 &&
@@ -53,27 +88,26 @@ function Book(props) {
       createdBook.publisher.length > 0 &&
       createdBook.authors.length > 0
     ) {
-      imageExists(createdBook.imageUrl, function(exists) {
-        if (exists) {
-          TeacherService.addBook(
-            regId.regId,
-            createdBook.isbn,
-            createdBook.title,
-            createdBook.publisher,
-            createdBook.authors,
-            createdBook.imageUrl,
-          )
-            .then((response) => {
-              window.location.reload();
-            })
-            .catch((error) => {
-              setError("Error: this book is already saved");
-            });
-        }
-        else{
-          setError("Error: Image Url is invalid");
-        }
-      });
+      // imageExists(createdBook.imageUrl, function(exists) {
+      //   if (exists) {
+          
+      //   }
+      //   else{
+      //     setError("Error: Image Url is invalid");
+      //   }
+        
+      // });
+      TeacherService.addBook(
+        imageBase64Value,
+        regId.regId,
+        createdBook.isbn,
+        createdBook.title,
+        createdBook.publisher,
+        createdBook.authors,
+      )
+        .then((response) => {
+          window.location.reload();
+        })
       
     } else {
       setError("Error: Fields must not be null");
@@ -126,35 +160,36 @@ function Book(props) {
                 <th>Author(s)</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody >
               {!isClicked ? (
                 books.map((book) => (
                   <tr>
                   {currentUser.roles == "ROLE_USER" && <td>{book.subjectCode}</td>}
-                    <td>
+                    <td className = "text-image">
                       {book.imageUrl == null ? 'Image not available' : 
                       <img
                         src={book.imageUrl}
-                        width="80"
-                        height="70"
+                        width="100"
+                        height="100"
                         alt="Cheetah!"
                       />
                       } 
                       
                     </td>
-                    <td>{book.isbn}</td>
-                    <td>{book.title}</td>
-                    <td>{book.publisher}</td>
-                    <td>{book.listOfAuthors}</td>
+                    <td className = "middle">{book.isbn}</td>
+                    <td className = "middle">{book.title}</td>
+                    <td className = "middle">{book.publisher}</td>
+                    <td className = "middle">{book.listOfAuthors}</td>
                   </tr>
                 ))
               ) : (
                 <tr>
                   <td>
                     <input
-                     onChange={handleImageUrlChange}
-                      type = "text"
-                      placeholder="image url"
+                     onChange={selectFile}
+                      type = "file"
+                      accept="image/x-png,image/gif,image/jpeg"
+                      placeholder="Book Image"
                     ></input>
                   </td>
                   <td>

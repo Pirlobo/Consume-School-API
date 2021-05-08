@@ -1,5 +1,5 @@
 import React from "react";
-import video from "../../asset/videos/video-2.mp4";
+import video from "../../asset/videos/video-1.mp4";
 function SuccessfullLoginPage() {
   return (
     <div className="herosection-container">

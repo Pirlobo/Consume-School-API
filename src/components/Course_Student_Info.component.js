@@ -11,7 +11,6 @@ function CourseStudentInfo(props) {
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [isSelected, setIsSelected] = useState(false);
   const [successfulDroppedClasses, setSuccessfulDroppedClasses] = useState([]);
-  const [object, setObject] = useState({});
   const [isAnyClassSelected, setAnyClassSelected] = useState(false);
   const [courseDescription, setCourseDescription] = useState("");
   useEffect(() => {
@@ -88,7 +87,7 @@ function CourseStudentInfo(props) {
                   <th>Email</th>
                   <th>Register Status</th>
                   <th>Available/ Capacity/ Wailist</th>
-                  <th>Register Rank</th>
+                  <th>Registration Rank</th>
                 </tr>
               </thead>
               <tbody>

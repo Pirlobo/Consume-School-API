@@ -34,7 +34,7 @@ const YourClasses = (props) => {
                 {/* <th>Prerequisite</th> */}
                 <th>Term</th>
                 <th>Register Status</th>
-                <th>Register Rank</th>
+                <th>Registration Rank</th>
               </tr>
             </thead>
             <tbody>

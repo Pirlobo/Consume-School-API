@@ -11,9 +11,11 @@ label {
   display: flex;
   flex-direction: row;
 }
-
+td.middle{
+  vertical-align: middle;
+}
 #assignment-header{
-  color:#03b1fc ;
+  color:#03b1fc;
 }
 .profile-card {
 background-color : #00defc;

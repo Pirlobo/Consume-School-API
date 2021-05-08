@@ -12,7 +12,7 @@ function Inbox(props) {
         TeacherService.sendAnnounement(content).then(
             (response) => {
                 if (response.data.message) {
-                    setLoading(false);
+                    setLoading(true);
                 }
             }
         )

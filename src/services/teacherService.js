@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import authHeader from "./auth-header";
 const API_URL = "http://localhost:8080/api/teacher/";
-
+const user = JSON.parse(localStorage.getItem('user'));
 class TeacherService {
   sendAnnounement(content) {
     return axios.post(API_URL + "sendAnnounement", {
@@ -66,9 +66,10 @@ class TeacherService {
     }
     );
   }
-  addBook(regId, isbn, title, publisher, listOfAuthors, imageUrl){
+  addBook(imageBase64Value, regId, isbn, title, publisher, listOfAuthors, imageUrl){
     return axios.post(API_URL + "addBook", 
     {
+      imageBase64Value,
       regId,
       isbn,
       title,
