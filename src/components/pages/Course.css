@@ -3,9 +3,9 @@
     height: 200px !important;
     display: flex;
     flex-direction: column;
-    border: 1px #03b1fc solid;
+    border: 1px #222831 solid;
     transition: .2s;
-    box-shadow: 0px 2px 5px #03b1fc
+    box-shadow: 0px 2px 5px #222831
 }
 .course-card:hover{
     opacity: 0.8;
@@ -31,7 +31,7 @@ a.course-title:hover{
 } */
 .course-header {
     padding: 2px 16px;
-    background: #03b1fc;
+    background: linear-gradient(-225deg, rgb(104, 102, 102), #222831);
     color: white;
     display: flex;
     justify-content: flex-start;
