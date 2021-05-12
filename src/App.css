@@ -5,6 +5,7 @@ label {
   display: block;
   margin-top: 10px;
 }
+
 .profile{
   position: relative;
   top: 5rem;
@@ -20,6 +21,7 @@ td.middle{
 .profile-card {
 background-color : #00defc;
 }
+
 .card-container.card {
   position: relative;
   top: 5rem;
@@ -374,24 +376,25 @@ table th {
 }
 
 #btn{
-  position: absolute;
+  position: relative;
   width: 8%;
   color: white ;
-  border-radius: 20px;
+  border-radius: 5px;
   border: none;
   height: 35px;
-  background-color: #03b1fc;
+  background: linear-gradient(to right, #03b1fc, #006894);
   font-size: 20px;  
   transition: .3s; 
   outline: none;
-  margin-left: 50%;
   opacity : 0.8;
-  width: 100px
 }
-.save-btn{
-  position: relative !important;
-  margin: auto;
+
+.centered-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 tbody input {
   text-align: center;
   border: none;
@@ -421,18 +424,16 @@ thead#assignment > tr {
   font-size: 1.2rem;
 }
 #assignment-btn{
-  position: relative;
   width: 8%;
   color: white ;
-  border-radius: 20px;
+  border-radius: 5px;
   border: none;
   height: 35px;
-  background-color: #03b1fc ;
+  background: linear-gradient(to right, #03b1fc, #00648f);
   font-size: 20px;  
   transition: .3s; 
   outline: none;
   opacity : 0.8;
-  top: -1rem;
 }
 #assignment-btn:hover{
   opacity : 1;
@@ -545,21 +546,27 @@ top: -1.5rem;
   outline: none;
   border: none;
   border-radius: 25px;
-  transition: all .7s;
   color: #00B4CC;
 }
 #spring:hover{
-  background-color: #00B4CC;
+  background: linear-gradient(to right, #00B4CC, #007180);
   color: white;
 }
 #fall{
   color: white;
-  background-color: #00B4CC;
-  width: 80px;
+  border: 3px solid ;
+  background: linear-gradient(to right, #00B4CC, #007180);
+  width: 85px;
   outline: none;
   border: none;
+  opacity: 0.8;
   border-radius: 25px;
+  transition: all 0.3s;
 }
+#fall:hover{
+  opacity: 1;
+}
+
 
 
 

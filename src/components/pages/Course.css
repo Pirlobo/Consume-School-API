@@ -3,7 +3,7 @@
     height: 200px !important;
     display: flex;
     flex-direction: column;
-    border: 1px #03b1fc;
+    border: 1px #03b1fc solid;
     transition: .2s;
     box-shadow: 0px 2px 5px #03b1fc
 }

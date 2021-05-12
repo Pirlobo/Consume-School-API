@@ -192,11 +192,13 @@ function Assignment(props) {
             </tbody>
           </table>
         </div>
+        <div className = "centered-btn">
         {!isClicked ? null : (
-          <button onClick={upload} id="btn" className = "save-btn" style = {{marginTop : 30}}>
+          <button onClick={upload} id="btn" style = {{marginTop : 30}}>
             Save
           </button>
         )}
+        </div>
       </div>
     </div>
   );

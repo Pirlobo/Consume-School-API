@@ -348,6 +348,7 @@ const Search = (props) => {
           </table>
 
           <div className="flex-row-direction">
+            <div>
             {items.length > 0 &&
               (successfulRegisteredClasses.length === 0 ||
                 successfulRegisteredClasses.message) && (
@@ -356,10 +357,11 @@ const Search = (props) => {
                   {items}
                 </p>
               )}
+            </div>
             {courses.length > 0 &&
             (successfulRegisteredClasses.length === 0 ||
               successfulRegisteredClasses.message) ? (
-              <button id="btn" onClick={onRegister}>
+              <button id="btn" style={{marginLeft: "300px", top: "-5px"}} onClick={onRegister}>
                 Register
               </button>
             ) : null}

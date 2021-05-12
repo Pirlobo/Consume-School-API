@@ -74,7 +74,9 @@ function CourseStudentInfo(props) {
       <div className="profile">
         <StudentCard props = {props}></StudentCard>
         <div className="container student-profile ">
+          <div style = {{"textAlign": "center"}}>
           <h1 id="course_list">{courseDescription}</h1>
+          </div>
           <div className="table assignment-table">
             {isAnyClassSelected && (
               <h4 style={{ color: "red" }}>Please, select at least a student </h4>
@@ -111,6 +113,7 @@ function CourseStudentInfo(props) {
                 ))}
               </tbody>
             </table>
+            <div className="centered-btn">
             {courses.length > 0 && (
               <div className="">
                 <button id="btn" className="grade-btn" onClick={onDrop}>
@@ -118,6 +121,7 @@ function CourseStudentInfo(props) {
                 </button>
               </div>
             )}
+            </div>
           </div>
         </div>
       </div>

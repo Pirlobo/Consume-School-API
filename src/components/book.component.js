@@ -134,7 +134,9 @@ const beforeImageUpload = (file) => {
     <div className="profile">
       <StudentCard isActive="true" props={props}></StudentCard>
       <div className="container student-profile ">
-        <h1 id="assignment-header">Required Books</h1>
+        <div style = {{ "textAlign": "center"}}> 
+        <h1 id="assignment-header">Materials Required</h1>
+        </div>
         <div className="table assignment-table">
           {currentUser.roles == "ROLE_TEACHER" ? (
             <button id="assignment-btn" onClick={onCreate}>
@@ -225,14 +227,15 @@ const beforeImageUpload = (file) => {
             </tbody>
           </table>
           {!isClicked ? null : (
-            <button
+           <div className="centered-btn">
+           <button
               onClick={persist}
               id="btn"
-              className="save-btn"
               style={{ marginTop: 45 }}
             >
               Save
             </button>
+            </div>
           )}
         </div>
       </div>

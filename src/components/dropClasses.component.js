@@ -142,7 +142,7 @@ const DropClasses = (props) => {
           {courses.length > 0 &&
           (successfulDroppedClasses.length === 0 ||
             successfulDroppedClasses.message) ? (
-            <div>
+            <div className="centered-btn">
               <button id="btn" className="grade-btn" onClick={onDrop}>
                 Drop
               </button>

@@ -122,7 +122,9 @@ function Grade(props) {
     <div className="profile">
       <StudentCard isActive="true" props={props}></StudentCard>
       <div className="container student-profile ">
+        <div style = {{ "textAlign": "center" , "width": "80%"}}>
         <h1 id="assignment-header">Student's Grades</h1>
+        </div>
         <h4 style={{ color: "red" }}>{error}</h4>
         <h4 style={{ color: "red" }}>{gradingError}</h4>
         {currentUser.roles == "ROLE_USER" && (
