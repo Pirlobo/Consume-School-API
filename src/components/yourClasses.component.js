@@ -16,9 +16,11 @@ const YourClasses = (props) => {
 
       <div className="container student-profile ">
         <div className="table ">
-          <h1 id="course_list">Registered Classes</h1>
+          <div id = "title">
+          <h1>Registered Classes</h1>
+          </div>
           <table>
-            <thead id="course_header">
+            <thead>
               <tr>
                 <th>Reg_Id</th>
                 <th>Title</th>

@@ -134,24 +134,24 @@ const beforeImageUpload = (file) => {
     <div className="profile">
       <StudentCard isActive="true" props={props}></StudentCard>
       <div className="container student-profile ">
-        <div style = {{ "textAlign": "center"}}> 
+        
+        <div className="table" style = {{width: "75%"}}>
+        <div id="title" style = {{ "textAlign": "center"}}> 
         <h1 id="assignment-header">Materials Required</h1>
         </div>
-        <div className="table assignment-table">
           {currentUser.roles == "ROLE_TEACHER" ? (
             <button id="assignment-btn" onClick={onCreate}>
               {!isClicked ? "Add" : "Cancel"}
             </button>
           ) : null}
           <div
-            className="alert alert-light"
-            style={{ color: "red" }}
+            style={{ color: "red", marginTop : "10px" }}
             role="alert"
           >
-            {error}
-            <h1 style={{ color: "#00defc"}}>{message}</h1>
+            <p>{error}</p>
+            {message && <p style={{ color: "orange"}}>{message}</p>}
           </div>
-          <table id="assignment-table">
+          <table >
             <thead id="assignment">
               <tr>
                {currentUser.roles == "ROLE_USER" && <th>Course</th>}
@@ -187,7 +187,7 @@ const beforeImageUpload = (file) => {
               ) : (
                 <tr>
                   <td>
-                    <input
+                    <input style= {{width: "100px"}}
                      onChange={selectFile}
                       type = "file"
                       accept="image/x-png,image/gif,image/jpeg"

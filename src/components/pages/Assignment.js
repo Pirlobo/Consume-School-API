@@ -117,7 +117,9 @@ function Assignment(props) {
     <div className="profile">
       <StudentCard isActive="true" props={props}></StudentCard>
       <div className="container student-profile ">
-        <h1 id="assignment-header">List Of Assignments</h1>
+      <div id = "title" style = {{"textAlign": "center"}}>
+          <h1>List Of Assignments</h1>
+          </div>
         <div className="table assignment-table">
         {currentUser.roles == 'ROLE_TEACHER' ? 
           <button id="assignment-btn" onClick={onCreate}>
@@ -125,10 +127,10 @@ function Assignment(props) {
           </button> : 
           null
           }
-          <div className="alert alert-light" role="alert">
+          <div className="text-alert" role="alert">
             {error}
           </div>
-          <table id="assignment-table">
+          <table>
             <thead id="assignment">
               <tr>
                 <th>Description</th>

@@ -15,9 +15,6 @@ label {
 td.middle{
   vertical-align: middle;
 }
-#assignment-header{
-  color:#03b1fc;
-}
 .profile-card {
 background-color : #00defc;
 }
@@ -36,8 +33,6 @@ background-color : #00defc;
   color: #03b1fc;
   font-size: 1rem !important;
 }
-
-
 .text-hidden{
   display: none !important;
 }
@@ -403,12 +398,11 @@ tbody input {
 input[type=file]{
   width: 62%;
 }
-thead#assignment > tr {
-  color:#03b1fc ;
+thead#assignment {
+  color: #03b1fc;
+  font-size: 1.1rem;
 }
-#assignment-table{
-  margin-top: -1rem;
-}
+
 .grade-table{
   width: 80% !important;
 }
@@ -421,7 +415,8 @@ thead#assignment > tr {
   display: flex;
   flex-direction: column;
   color: black;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem
 }
 #assignment-btn{
   width: 8%;
@@ -456,12 +451,7 @@ thead#assignment > tr {
   border-width: 2px;
   border-color: lightseagreen;
 }
-#course_list{
-  color: #ffae00 !important;
-}
-#course_header{
-  color: #28527a;
-}
+
 .default-row-spacer{
  margin-left: 3rem;
 }
@@ -516,11 +506,16 @@ body{
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 120%;
-  top: 2rem;
+  width: 125%;
 }
 .assignment-table{
   width: 100% !important;
+}
+div#title > h1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: linear-gradient(to right,orange, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .due-date{
 position: relative;

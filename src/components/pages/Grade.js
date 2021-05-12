@@ -123,7 +123,9 @@ function Grade(props) {
       <StudentCard isActive="true" props={props}></StudentCard>
       <div className="container student-profile ">
         <div style = {{ "textAlign": "center" , "width": "80%"}}>
-        <h1 id="assignment-header">Student's Grades</h1>
+        <div id = "title" style = {{"textAlign": "center"}}>
+          <h1>Student's Grades</h1>
+          </div>
         </div>
         <h4 style={{ color: "red" }}>{error}</h4>
         <h4 style={{ color: "red" }}>{gradingError}</h4>
@@ -135,7 +137,7 @@ function Grade(props) {
           </div>
         )}
         <div className="table grade-table">
-          <table id="assignment-table">
+          <table>
             <thead id="assignment">
               {currentUser.roles == "ROLE_TEACHER" ? (
                 <tr>

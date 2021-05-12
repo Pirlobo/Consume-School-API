@@ -13,6 +13,7 @@ function CourseStudentInfo(props) {
   const [successfulDroppedClasses, setSuccessfulDroppedClasses] = useState([]);
   const [isAnyClassSelected, setAnyClassSelected] = useState(false);
   const [courseDescription, setCourseDescription] = useState("");
+
   useEffect(() => {
     TeacherService.studentInfo(regId.regId).then((response) => {
       setCourses(response.data);
@@ -74,8 +75,8 @@ function CourseStudentInfo(props) {
       <div className="profile">
         <StudentCard props = {props}></StudentCard>
         <div className="container student-profile ">
-          <div style = {{"textAlign": "center"}}>
-          <h1 id="course_list">{courseDescription}</h1>
+          <div id = "title" style = {{"textAlign": "center"}}>
+          <h1>{courseDescription}</h1>
           </div>
           <div className="table assignment-table">
             {isAnyClassSelected && (

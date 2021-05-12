@@ -67,7 +67,9 @@ const DropClasses = (props) => {
               You have successfully dropped the following classes
             </h1>
           ) : (
-            <h1 id="course_list">Course List</h1>
+            <div id = "title" style = {{textAlign: "center"}}>
+            <h1 id="course_list">Course List</h1> 
+            </div>
           )}
 
           {isSelected && (
@@ -139,14 +141,13 @@ const DropClasses = (props) => {
               </tbody>
             )}
           </table>
+          <div className="centered-btn">
           {courses.length > 0 &&
           (successfulDroppedClasses.length === 0 ||
             successfulDroppedClasses.message) ? (
-            <div className="centered-btn">
               <button id="btn" className="grade-btn" onClick={onDrop}>
                 Drop
               </button>
-            </div>
           ) : (
             [
               successfulDroppedClasses.length > 0 ? (
@@ -158,6 +159,7 @@ const DropClasses = (props) => {
               ) : null,
             ]
           )}
+            </div>
         </div>
       </div>
     </div>

@@ -33,6 +33,7 @@ body, body * {
 .text-alert{
   font-family:  'Trebuchet MS', sans-serif;
   color: #ff577f !important;
+  margin-top: 1rem;
 }
 .form-content{
   margin: auto;

@@ -190,14 +190,17 @@ const Search = (props) => {
           </div>
         </div>
         <div className="table ">
-          {successfulRegisteredClasses.length > 0 ? (
+        <div id="title" >
+        {successfulRegisteredClasses.length > 0 ? (
             <h1 id="course_list">
               You have successfully registered the following courses
             </h1>
           ) : (
-            <h1 id="course_list">Course List</h1>
+            <h1 style = {{margin : "1rem 0 1rem"}} id="course_list">Course List</h1>
           )}
 
+            </div>
+          
           {isSelected && (
             <h5 style={styles}>You have not selected any course</h5>
           )}
