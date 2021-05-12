@@ -117,10 +117,10 @@ function Assignment(props) {
     <div className="profile">
       <StudentCard isActive="true" props={props}></StudentCard>
       <div className="container student-profile ">
-      <div id = "title" style = {{"textAlign": "center"}}>
+        <div className="table" style = {{width: "70%"}}>
+        <div id = "title" style = {{"textAlign": "center"}}>
           <h1>List Of Assignments</h1>
           </div>
-        <div className="table assignment-table">
         {currentUser.roles == 'ROLE_TEACHER' ? 
           <button id="assignment-btn" onClick={onCreate}>
             {!isClicked ? "New" : "Cancel"}
@@ -193,14 +193,15 @@ function Assignment(props) {
               )}
             </tbody>
           </table>
-        </div>
-        <div className = "centered-btn">
+          <div className = "centered-btn">
         {!isClicked ? null : (
           <button onClick={upload} id="btn" style = {{marginTop : 30}}>
             Save
           </button>
         )}
         </div>
+        </div>
+        
       </div>
     </div>
   );
