@@ -115,7 +115,7 @@ const beforeImageUpload = (file) => {
   };
   useEffect(() => {
     if (currentUser.roles == "ROLE_TEACHER") {
-      TeacherService.getRequiredBooksByCourse(regId.regId).then((response) => {
+      BookService.getRequiredBooksByCourse(regId.regId).then((response) => {
         setBooks(response.data);
       });
     } else if (currentUser.roles == "ROLE_USER"){
