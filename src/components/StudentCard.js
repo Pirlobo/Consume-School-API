@@ -79,7 +79,7 @@ export default class StudentCard extends Component {
 
     return (
       <div
-        className={this.props.isActive ? "search_student-card" : "student-card"}
+        className="search_student-card"
       >
         <i class="big-icon fas fa-user-graduate"></i>
         <h4 className="profile-name">

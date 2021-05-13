@@ -1,6 +1,6 @@
 .course-card {
-    width: 250px !important;
-    height: 200px !important;
+    width: 250px ;
+    height: 200px;
     display: flex;
     flex-direction: column;
     border: 1px #222831 solid;
@@ -13,10 +13,9 @@
 
 .course-title{
     color: white;
-    transition: .2s;
 }
 a.course-title:hover{
-    color: aqua;
+    color: white;
 }
 
 .course-flex{
@@ -31,13 +30,15 @@ a.course-title:hover{
 } */
 .course-header {
     padding: 2px 16px;
-    background: linear-gradient(-225deg, rgb(104, 102, 102), #222831);
+    background: linear-gradient(-225deg, #03b1fc, #013952);
     color: white;
+    height: 45px;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     transition: .5s;
 }
 .course-container {
-    color: black;
+    color: blue;
     padding:  16px;
 }

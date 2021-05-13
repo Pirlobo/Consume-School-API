@@ -72,9 +72,7 @@ function Course(props) {
                         onClick(course.regId);
                       }}
                     >
-                      <p>
-                        {course.title + " -"} {course.section}{" "}
-                      </p>
+                     {course.title + " -"} {course.section}{" "}
                     </a>
                   </div>
                   <div class="course-container">

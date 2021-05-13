@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Switch, Route, Link, Redirect, useLocation } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import ResetPasswordController from "./components/ResetPasswordController.js";
 import AuthService from "./services/auth.service";
