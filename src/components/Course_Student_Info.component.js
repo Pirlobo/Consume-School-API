@@ -83,7 +83,7 @@ function CourseStudentInfo(props) {
               <h4 style={{ color: "red" }}>Please, select at least a student </h4>
             )}
             <table>
-              <thead id="course_header">
+              <thead id="assignment">
                 <tr>
                   <th>Drop</th>
                   <th>Name</th>

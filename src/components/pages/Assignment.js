@@ -117,7 +117,7 @@ function Assignment(props) {
     <div className="profile">
       <StudentCard isActive="true" props={props}></StudentCard>
       <div className="container student-profile ">
-        <div className="table" style = {{width: "70%"}}>
+        <div className="table" style = {{width: "75%"}}>
         <div id = "title" style = {{"textAlign": "center"}}>
           <h1>List Of Assignments</h1>
           </div>

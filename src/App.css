@@ -382,7 +382,15 @@ table th {
   transition: .3s; 
   outline: none;
   opacity : 0.8;
+  
 }
+
+#btn:hover {
+  opacity: 1;
+  border-width: 2px;
+  border-color: lightseagreen;
+}
+
 
 .centered-btn{
   display: flex;
@@ -400,7 +408,6 @@ input[type=file]{
 }
 thead#assignment {
   color: #03b1fc;
-  font-size: 1.1rem;
 }
 
 .grade-table{
@@ -446,11 +453,7 @@ thead#assignment {
   width: 10%;
 }
 
-#btn:hover {
-  opacity: 1;
-  border-width: 2px;
-  border-color: lightseagreen;
-}
+
 
 .default-row-spacer{
  margin-left: 3rem;
