@@ -208,7 +208,7 @@ const Search = (props) => {
             <h4 style={styles}>{successfulRegisteredClasses.message}</h4>
           )}
           <table>
-            <thead id="course_header">
+            <thead id="assignment">
               <tr>
                 {successfulRegisteredClasses.length > 0 ? null : (
                   <th>Register</th>

@@ -77,7 +77,7 @@ const DropClasses = (props) => {
           )}
           {/* {successfulDroppedClasses.message && <h4 style={styles}>{successfulDroppedClasses.message}</h4>} */}
           <table>
-            <thead id="course_header">
+            <thead id="assignment">
               <tr>
                 {successfulDroppedClasses.length > 0 ? null : <th>Drop</th>}
                 <th>Reg_Id</th>

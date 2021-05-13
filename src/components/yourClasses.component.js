@@ -20,7 +20,7 @@ const YourClasses = (props) => {
           <h1>Registered Classes</h1>
           </div>
           <table>
-            <thead>
+            <thead id = "assignment">
               <tr>
                 <th>Reg_Id</th>
                 <th>Title</th>

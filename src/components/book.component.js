@@ -126,6 +126,7 @@ const beforeImageUpload = (file) => {
         else{
           setBooks(response.data)
         }
+        console.log(response)
       })
     }
   }, []); // run only one
@@ -166,7 +167,7 @@ const beforeImageUpload = (file) => {
               {!isClicked ? (
                 books.map((book) => (
                   <tr>
-                  {currentUser.roles == "ROLE_USER" && <td>{book.subjectCode}</td>}
+                  {currentUser.roles == "ROLE_USER" && <td className = "middle">{book.subjectCode}</td>}
                     <td className = "text-image">
                       {book.imageUrl == null ? 'Image not available' : 
                       <img

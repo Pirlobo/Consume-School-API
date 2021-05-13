@@ -82,13 +82,6 @@ class TeacherService {
     }
     );
   }
-  getRequiredBooksByCourse(regId) {
-    return axios.get(API_URL + "getRequiredBooksByCourse/" + regId, 
-    {
-        headers: authHeader()
-    }
-    );
-  }
 }
 
 export default new TeacherService();
