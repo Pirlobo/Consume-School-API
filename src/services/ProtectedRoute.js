@@ -30,6 +30,7 @@ const ProtectedRoute = ({
             if (Cooky.get("current-access")) {
               return <Route path={path} render={props} component={Component} />;
             }
+            AuthService.logout()
             return (
               <Redirect
                 to={{ pathname: "/login", state: { from: props.location } }}

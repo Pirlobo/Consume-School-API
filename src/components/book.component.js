@@ -3,6 +3,7 @@ import StudentCard from "./StudentCard";
 import BookService from "../services/book.service";
 import TeacherService from "../services/teacherService";
 import AuthService from "../services/auth.service";
+
 function Book(props) {
   const [isClicked, setIsClicked] = useState(false);
   const currentLoggedUser = AuthService.getCurrentUser();
@@ -20,6 +21,27 @@ function Book(props) {
     publisher: "",
     authors: "",
   });
+  const beforeImageUpload = (file) => {
+    const fileIsValidImage = file.type === "image/jpeg" || file.type === "image/png";
+    const fileIsValidSize = file.size / 1024 / 1024 < 1;
+
+    if (!fileIsValidImage) {
+        return false;
+    }
+
+    if (!fileIsValidSize) {
+        return false;
+    }
+
+    return fileIsValidImage && fileIsValidSize;
+};
+const getBase64Value = (img, callback) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(img);
+  reader.onload = () => {
+      callback(reader.result);
+  };
+};
   
   const selectFile = (event) => {
     if (beforeImageUpload(event.target.files[0])) {
@@ -51,29 +73,6 @@ function Book(props) {
   const handleImageUrlChange = (e) => {
     setCreatedBook({ ...createdBook, imageUrl: e.target.value });
   };
-
-const getBase64Value = (img, callback) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(img);
-    reader.onload = () => {
-        callback(reader.result);
-    };
-};
-
-const beforeImageUpload = (file) => {
-    const fileIsValidImage = file.type === "image/jpeg" || file.type === "image/png";
-    const fileIsValidSize = file.size / 1024 / 1024 < 1;
-
-    if (!fileIsValidImage) {
-        return false;
-    }
-
-    if (!fileIsValidSize) {
-        return false;
-    }
-
-    return fileIsValidImage && fileIsValidSize;
-};
 
   // const imageExists = (url, callback) => {
   //   var img = new Image();

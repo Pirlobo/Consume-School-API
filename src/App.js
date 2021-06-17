@@ -286,7 +286,8 @@ class App extends Component {
             ></ProtectedRoute>
 
             <ProtectedRoute
-              exact path="/manageCourses/grade"
+              exact
+              path="/manageCourses/grade"
               component={Course}
               isAuth={this.state.isAuth}
             ></ProtectedRoute>
@@ -298,25 +299,29 @@ class App extends Component {
             ></ProtectedRoute>
 
             <ProtectedRoute
-              exact path="/viewTranscript"
+              exact
+              path="/viewTranscript"
               component={Grade}
               isAuth={this.state.isAuth}
             ></ProtectedRoute>
 
             <ProtectedRoute
-              exact path="/manageCourses/addBook"
+              exact
+              path="/manageCourses/addBook"
               component={Course}
               isAuth={this.state.isAuth}
             ></ProtectedRoute>
 
             <ProtectedRoute
-              exact path="/manageCourses/addBook/:id"
+              exact
+              path="/manageCourses/addBook/:id"
               component={Book}
               isAuth={this.state.isAuth}
             ></ProtectedRoute>
-            
+
             <ProtectedRoute
-              exact path="/assignments"
+              exact
+              path="/assignments"
               component={Course}
               isAuth={this.state.isAuth}
             ></ProtectedRoute>

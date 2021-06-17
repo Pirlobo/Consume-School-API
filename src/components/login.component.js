@@ -55,7 +55,7 @@ export default class Login extends Component {
       loading: true,
     });
     this.form.validateAll();
-    
+
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         (response) => {
